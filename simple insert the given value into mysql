@@ -1,0 +1,26 @@
+package com.company;
+import com.mysql.cj.protocol.Resultset;
+import java.sql.*;
+
+public class Main {
+
+    public static void main(String[] args) throws SQLException {
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/intelji", "root", "admin");
+            Statement statement = connection.createStatement();
+                //simple insert the given value into mysql
+            String a= "insert into student(Name,rollNo,gender)values('','','')";
+
+            statement.execute(a);
+           connection.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+}
+
+//use    mysql-connector-java-8.0.28.jar
